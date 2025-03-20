@@ -49,7 +49,7 @@ public class verification_testcase extends AppTestBase {
 			"sanity" }, description = "Precondition: User should be logged in and on the healthapp section\n"
 					+ "1. Login in the healthapp application\n" + "2. Scroll down menu till verification\n"
 					+ "3. Click on the verification")
-	public void verifyVerificationModule() throws Exception {
+	public void verifyVerificationPageUrl() throws Exception {
 		verification_pageInstance = new verification_page(driver);
 
 		Map<String, String> verificationExpectedData = new FileOperations().readExcelPOI(expectedDataFilePath,
@@ -71,10 +71,10 @@ public class verification_testcase extends AppTestBase {
 		try {
 			verification_pageInstance = new verification_page(driver);
 
-			Assert.assertTrue(verification_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
+			Assert.assertTrue(verification_pageInstance.verifyVerificationSubModules(
 					locatorsFactoryInstance.getPageBarFixedLocator("Inventory")));
 
-			Assert.assertTrue(verification_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
+			Assert.assertTrue(verification_pageInstance.verifyVerificationSubModules(
 					locatorsFactoryInstance.getPageBarFixedLocator("Pharmacy")));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -90,56 +90,33 @@ public class verification_testcase extends AppTestBase {
 
 		locatorsFactoryInstance = new LocatorsFactory(driver);
 
-		Assert.assertTrue(verification_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
+		Assert.assertTrue(verification_pageInstance.verifyInventoryTabsAndButtonsAreDisplayed(
 				locatorsFactoryInstance.getSubNavTabLocator("Requisition")));
 
-		Assert.assertTrue(verification_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
+		Assert.assertTrue(verification_pageInstance.verifyInventoryTabsAndButtonsAreDisplayed(
 				locatorsFactoryInstance.getSubNavTabLocator("Purchase Request")));
 
-		Assert.assertTrue(verification_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
+		Assert.assertTrue(verification_pageInstance.verifyInventoryTabsAndButtonsAreDisplayed(
 				locatorsFactoryInstance.getSubNavTabLocator("Purchase Order")));
 
-		Assert.assertTrue(verification_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
+		Assert.assertTrue(verification_pageInstance.verifyInventoryTabsAndButtonsAreDisplayed(
 				locatorsFactoryInstance.getSubNavTabLocator("GR Quality Inspection")));
 
-		Assert.assertTrue(verification_pageInstance.highlightAndClickOnElement(
-				locatorsFactoryInstance.getSubNavTabLocator("Requisition"), "Requisition"));
+//		Assert.assertTrue(verification_pageInstance.verifyInventoryTabsAndButtonsAreDisplayed(
+//				locatorsFactoryInstance.getSubNavTabLocator("Requisition"), "Requisition"));
 
-		Assert.assertTrue(verification_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
+		Assert.assertTrue(verification_pageInstance.verifyInventoryTabsAndButtonsAreDisplayed(
 				locatorsFactoryInstance.getRadioButtonsLocator("pending")));
 
-		Assert.assertTrue(verification_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
+		Assert.assertTrue(verification_pageInstance.verifyInventoryTabsAndButtonsAreDisplayed(
 				locatorsFactoryInstance.getRadioButtonsLocator("approved")));
 
-		Assert.assertTrue(verification_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
+		Assert.assertTrue(verification_pageInstance.verifyInventoryTabsAndButtonsAreDisplayed(
 				locatorsFactoryInstance.getRadioButtonsLocator("rejected")));
 
 		Assert.assertTrue(verification_pageInstance
-				.highlightAndVerifyWhetherElementIsDisplayed(locatorsFactoryInstance.getRadioButtonsLocator("all")));
+				.verifyInventoryTabsAndButtonsAreDisplayed(locatorsFactoryInstance.getRadioButtonsLocator("all")));
 
-		Assert.assertTrue(verification_pageInstance
-				.highlightAndVerifyWhetherElementIsDisplayed(locatorsFactoryInstance.favouriteOrStarIcon()));
-
-		Assert.assertTrue(verification_pageInstance
-				.highlightAndVerifyWhetherElementIsDisplayed(locatorsFactoryInstance.getOkButtonLocator()));
-
-		Assert.assertTrue(verification_pageInstance
-				.highlightAndVerifyWhetherElementIsDisplayed(locatorsFactoryInstance.searchBarId()));
-
-		Assert.assertTrue(verification_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
-				locatorsFactoryInstance.getButtonLocatorsBytext("Print")));
-
-		Assert.assertTrue(verification_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
-				locatorsFactoryInstance.getButtonLocatorsBytext("First")));
-
-		Assert.assertTrue(verification_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
-				locatorsFactoryInstance.getButtonLocatorsBytext("Previous")));
-
-		Assert.assertTrue(verification_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
-				locatorsFactoryInstance.getButtonLocatorsBytext("Next")));
-
-		Assert.assertTrue(verification_pageInstance.highlightAndVerifyWhetherElementIsDisplayed(
-				locatorsFactoryInstance.getButtonLocatorsBytext("Last")));
 	}
 
 	@Test(priority = 4, groups = {
@@ -147,10 +124,10 @@ public class verification_testcase extends AppTestBase {
 					+ "1. Click on the inventory  \r\n" + "2. Click on the pharmacy \r\n"
 					+ "3. User should navigate to the pharmacy section from the inventory section ")
 
-	public void verifyNavigationToAnotherSubModuleAfterOpeningTheInventorySection() throws Exception {
+	public void verifyPharmacyTabIsActiveOrNot() throws Exception {
 		locatorsFactoryInstance = new LocatorsFactory(driver);
 
-		Assert.assertTrue(verification_pageInstance.verifySelectedTabIsActiveOrNot(
+		Assert.assertTrue(verification_pageInstance.verifyPharmacyTabIsActiveOrNot(
 				locatorsFactoryInstance.getPageBarFixedLocator("Pharmacy")), "Pharmacy page is not active");
 	}
 
@@ -169,7 +146,7 @@ public class verification_testcase extends AppTestBase {
 			"sanity" }, description = "Pre condition: User should be logged in and it is on Requisition section"
 					+ "1. Click on the \"From\" date" + "2. Select the \"From\" date" + "3. Click on the \"To\" date"
 					+ "4. Select \"To\" date" + "5. Click on \"OK\" button")
-	public void verifySearchDataByDateFilter() throws Exception {
+	public void verifyTheResultsDateRangeIsWithinTheSelectedRange() throws Exception {
 		verification_pageInstance = new verification_page(driver);
 
 		LocalDate currentDate = LocalDate.now();

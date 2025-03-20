@@ -14,33 +14,33 @@ public class LocatorsFactory extends UserActions {
 	UserActions userActions = new UserActions(driver);
 	
 	//Locators for Verification
-	public By getPageBarFixedLocator(String navBarName) {
-		return By.xpath("//ul[@class='page-breadcrumb']/li/a[@href='#/Verification/" + navBarName + "']");
-	}
-	
-	public By getSubNavTabLocator(String subNavName) {
-		return By.xpath("//div[@class=\"sub-navtab\"]/ul/li/a[text()='" + subNavName + "']");
-	}
-	
-	public By getRadioButtonsLocator(String radioButtonName) {
-		return By.xpath("//input[@value='" + radioButtonName + "']/../span");
-	}
-	
-	public By favouriteOrStarIcon() {
-		return By.xpath("//i[contains(@class,'icon-favourite')]");
-	}
-	
-	public By getOkButtonLocator() {
-		return By.xpath("//button[@class='btn green btn-success']");
-	}
-	
-	public By getButtonLocatorsBytext(String buttonName) {
-		return By.xpath("//button[contains(text(),'" + buttonName + "')]");
-	}
-	
-	public By searchBarId() {
-		return By.id("quickFilterInput");
-	}
+		public By getPageBarFixedLocator(String navBarName) {
+			return By.xpath("//ul[@class='page-breadcrumb']/li/a[@href='#/Verification/" + navBarName + "']");
+		}
+		
+		public By getSubNavTabLocator(String subNavName) {
+			return By.xpath("//div[@class=\"sub-navtab\"]/ul/li/a[text()='" + subNavName + "']");
+		}
+		
+		public By getRadioButtonsLocator(String radioButtonName) {
+			return By.xpath("//input[@value='" + radioButtonName + "']/../span");
+		}
+		
+		public By favouriteOrStarIcon() {
+			return By.xpath("//i[contains(@class,'icon-favourite')]");
+		}
+		
+		public By getOkButtonLocator() {
+			return By.xpath("//button[@class='btn green btn-success']");
+		}
+		
+		public By getButtonLocatorsBytext(String buttonName) {
+			return By.xpath("//button[contains(text(),'" + buttonName + "')]");
+		}
+		
+		public By searchBarId() {
+			return By.id("quickFilterInput");
+		}
 
 	// element of health application
 

@@ -149,7 +149,7 @@ public class verification_page extends StartupPage {
 	}
 
 	/**
-	 * @Test2, 3 about this method highlightAndVerifyWhetherElementIsDisplayed
+	 * @Test2 about this method highlightAndVerifyWhetherElementIsDisplayed
 	 * 
 	 * @param element : By - Locator of the element to be highlighted and verified
 	 * @description : This method verifies whether an element is displayed on the
@@ -157,7 +157,7 @@ public class verification_page extends StartupPage {
 	 * @return : boolean - true if the element is displayed, otherwise false
 	 * @author : YAKSHA
 	 */
-	public boolean highlightAndVerifyWhetherElementIsDisplayed(By element) {
+	public boolean verifyVerificationSubModules(By element) {
 		boolean isElementDisplayed = false;
 		try {
 			if (commonEvents.isDisplayed(element)) {
@@ -172,7 +172,7 @@ public class verification_page extends StartupPage {
 	}
 
 	/**
-	 * @Test2, @Test3 and @Test9.1 about this method highlightAndClickOnElement
+	 * @Test3 about this method highlightAndClickOnElement
 	 * 
 	 * @param element     : By - Locator of the element to be highlighted and
 	 *                    clicked
@@ -184,15 +184,19 @@ public class verification_page extends StartupPage {
 	 *         false
 	 * @author : YAKSHA
 	 */
-	public boolean highlightAndClickOnElement(By element, String elementName) {
+	
+	public boolean verifyInventoryTabsAndButtonsAreDisplayed(By element) {
 		boolean isElementDisplayed = false;
 		try {
-			WebElement elementToBeClicked = commonEvents.findElement(element);
-			commonEvents.highlight(elementToBeClicked);
-			commonEvents.click(elementToBeClicked);
-			System.out.println("Clicked on " + elementName);
-			isElementDisplayed = true;
-		} catch (Exception e) {
+			if (commonEvents.isDisplayed(element)) {
+				WebElement elementToFind = commonEvents.findElement(element);
+				commonEvents.highlight(elementToFind);
+				commonEvents.click(elementToFind);
+				System.out.println("Clicked on " + elementToFind);
+				isElementDisplayed = true;
+			}}
+		
+		catch (Exception e) {
 			e.printStackTrace();
 		}
 		return isElementDisplayed;
@@ -211,7 +215,7 @@ public class verification_page extends StartupPage {
 	 *           the tab, or getting its attribute
 	 * @author : YAKSHA
 	 */
-	public boolean verifySelectedTabIsActiveOrNot(By element) throws Exception {
+	public boolean verifyPharmacyTabIsActiveOrNot(By element) throws Exception {
 		boolean isActive = false;
 		try {
 			if (commonEvents.isDisplayed(element)) {
@@ -241,6 +245,23 @@ public class verification_page extends StartupPage {
 	 *           the tab, or getting its attribute
 	 * @author : YAKSHA
 	 */
+	
+	//Helper code for TC-5 and 8
+	public boolean highlightAndClickOnElement(By element, String elementName) {
+		boolean isElementDisplayed = false;
+		try {
+			WebElement elementToBeClicked = commonEvents.findElement(element);
+			commonEvents.highlight(elementToBeClicked);
+			commonEvents.click(elementToBeClicked);
+			System.out.println("Clicked on " + elementName);
+			isElementDisplayed = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return isElementDisplayed;
+	}
+	
+	
 	public boolean verifyNavigationOfTabs() throws Exception {
 		boolean isActive = false;
 		try {
@@ -266,7 +287,7 @@ public class verification_page extends StartupPage {
 	}
 
 	/**
-	 * @Test6 and @Test9.3 about this method
+	 * @Test6 about this method
 	 *        verifyTheResultsDateRangeIsWithinTheSelectedRange()
 	 * 
 	 * @param : String, String - from date - to date
@@ -396,17 +417,10 @@ public class verification_page extends StartupPage {
 			System.out.println("Actual from date : " + actualFromDate);
 			System.out.println("Actual to date : " + actualToDate);
 
-			// Locate and click the tooltip
-//			commonEvents.waitTillElementVisible(toolTip, 10000);
-//			Thread.sleep(3000);
-//			commonEvents.click(toolTip);
-
 			// Verify if the remembered dates match the expected dates
 			if (actualFromDate.equals(fromDate) && actualToDate.equals(toDate)) {
 				System.out.println("Returned true");
-//				Thread.sleep(20000);
-//				commonEvents.highlight(toolTip).click(toolTip);
-//				commonEvents.click(getOkButtonLocator());
+
 				return true;
 			}
 
