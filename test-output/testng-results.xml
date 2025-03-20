@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-02-25T19:06:17 IST" name="Suite" finished-at="2025-02-25T19:07:13 IST" duration-ms="55607">
+    <groups>
+      <group name="sanity">
+        <method signature="verification_testcase.verifyVerificationModule()[pri:1, instance:testcases.verification_testcase@12cd9150]" name="verifyVerificationModule" class="testcases.verification_testcase"/>
+        <method signature="verification_testcase.verifyVerificationSubModules()[pri:2, instance:testcases.verification_testcase@12cd9150]" name="verifyVerificationSubModules" class="testcases.verification_testcase"/>
+        <method signature="verification_testcase.verifyInventoryTabsAndButtonsAreDisplayed()[pri:3, instance:testcases.verification_testcase@12cd9150]" name="verifyInventoryTabsAndButtonsAreDisplayed" class="testcases.verification_testcase"/>
+        <method signature="verification_testcase.verifyNavigationToAnotherSubModuleAfterOpeningTheInventorySection()[pri:4, instance:testcases.verification_testcase@12cd9150]" name="verifyNavigationToAnotherSubModuleAfterOpeningTheInventorySection" class="testcases.verification_testcase"/>
+        <method signature="verification_testcase.verifyNavigationOfTabs()[pri:5, instance:testcases.verification_testcase@12cd9150]" name="verifyNavigationOfTabs" class="testcases.verification_testcase"/>
+        <method signature="verification_testcase.verifySearchDataByDateFilter()[pri:6, instance:testcases.verification_testcase@12cd9150]" name="verifySearchDataByDateFilter" class="testcases.verification_testcase"/>
+        <method signature="verification_testcase.verifyToolTipText()[pri:7, instance:testcases.verification_testcase@12cd9150]" name="verifyToolTipText" class="testcases.verification_testcase"/>
+        <method signature="verification_testcase.verifyDatesAreRemeberedCorrectly()[pri:8, instance:testcases.verification_testcase@12cd9150]" name="verifyDatesAreRemeberedCorrectly" class="testcases.verification_testcase"/>
+      </group> <!-- sanity -->
+    </groups>
+    <test started-at="2025-02-25T19:06:17 IST" name="Test" finished-at="2025-02-25T19:07:13 IST" duration-ms="55607">
+      <class name="testcases.verification_testcase">
+        <test-method is-config="true" signature="initBrowser(java.lang.String,java.lang.String)[pri:0, instance:testcases.verification_testcase@12cd9150]" started-at="2025-02-25T19:06:17 IST" name="initBrowser" finished-at="2025-02-25T19:06:22 IST" duration-ms="4997" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[dev]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initBrowser -->
+        <test-method signature="verifyVerificationModule()[pri:1, instance:testcases.verification_testcase@12cd9150]" started-at="2025-02-25T19:06:22 IST" name="verifyVerificationModule" description="Precondition: User should be logged in and on the healthapp section
+1. Login in the healthapp application
+2. Scroll down menu till verification
+3. Click on the verification" finished-at="2025-02-25T19:06:27 IST" duration-ms="4882" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyVerificationModule -->
+        <test-method signature="verifyVerificationSubModules()[pri:2, instance:testcases.verification_testcase@12cd9150]" started-at="2025-02-25T19:06:31 IST" name="verifyVerificationSubModules" description="Precondition: User should be logged in and on the Verification section\n&quot;
+	+ &quot;1. Click on the Verification Module drop-down arrow\n&quot;
+	+ &quot;2. Click on Order" finished-at="2025-02-25T19:06:31 IST" duration-ms="10" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyVerificationSubModules -->
+        <test-method signature="verifyInventoryTabsAndButtonsAreDisplayed()[pri:3, instance:testcases.verification_testcase@12cd9150]" started-at="2025-02-25T19:06:34 IST" name="verifyInventoryTabsAndButtonsAreDisplayed" description="Precondition: User should be logged in and on the Verification section\n&quot;
+	+ &quot;1. Click on the Verification Module drop-down arrow\n&quot;
+	+ &quot;2. Click on Inventory	+ &quot;3. Click on Requisition" finished-at="2025-02-25T19:06:45 IST" duration-ms="10530" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyInventoryTabsAndButtonsAreDisplayed -->
+        <test-method signature="verifyNavigationToAnotherSubModuleAfterOpeningTheInventorySection()[pri:4, instance:testcases.verification_testcase@12cd9150]" started-at="2025-02-25T19:06:49 IST" name="verifyNavigationToAnotherSubModuleAfterOpeningTheInventorySection" description="Pre condition: User should be logged in and it is on verification module
+1. Click on the inventory  
+2. Click on the pharmacy 
+3. User should navigate to the pharmacy section from the inventory section " finished-at="2025-02-25T19:06:49 IST" duration-ms="768" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigationToAnotherSubModuleAfterOpeningTheInventorySection -->
+        <test-method signature="verifyNavigationOfTabs()[pri:5, instance:testcases.verification_testcase@12cd9150]" started-at="2025-02-25T19:06:52 IST" name="verifyNavigationOfTabs" description="Pre condition: User should be logged in and it is on verification module
+1. Click on the inventory  
+2. Click on the pharmacy 
+3. User should navigate to the pharmacy section from the inventory section " finished-at="2025-02-25T19:06:55 IST" duration-ms="2772" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNavigationOfTabs -->
+        <test-method signature="verifySearchDataByDateFilter()[pri:6, instance:testcases.verification_testcase@12cd9150]" started-at="2025-02-25T19:06:58 IST" name="verifySearchDataByDateFilter" description="Pre condition: User should be logged in and it is on Requisition section1. Click on the &quot;From&quot; date2. Select the &quot;From&quot; date3. Click on the &quot;To&quot; date4. Select &quot;To&quot; date5. Click on &quot;OK&quot; button" finished-at="2025-02-25T19:06:59 IST" duration-ms="590" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchDataByDateFilter -->
+        <test-method signature="verifyToolTipText()[pri:7, instance:testcases.verification_testcase@12cd9150]" started-at="2025-02-25T19:07:02 IST" name="verifyToolTipText" description="Pre condition: User should be logged in and it is on Inventory &gt; Requisition section 
+1. Hover the mouse over the star/favourite icon. 
+2. Verify that a tooltip with the text &quot;Remember this date&quot; appears when hovering over the star." finished-at="2025-02-25T19:07:02 IST" duration-ms="679" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyToolTipText -->
+        <test-method signature="verifyDatesAreRemeberedCorrectly()[pri:8, instance:testcases.verification_testcase@12cd9150]" started-at="2025-02-25T19:07:06 IST" name="verifyDatesAreRemeberedCorrectly" description="Pre condition: User should be logged in and it is on Inventory &gt; Requisition section 
+1. Hover the mouse over the star/favourite icon. 
+2. Verify that a tooltip with the text &quot;Remember this date&quot; appears when hovering over the star." finished-at="2025-02-25T19:07:10 IST" duration-ms="4179" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDatesAreRemeberedCorrectly -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.verification_testcase@12cd9150]" started-at="2025-02-25T19:07:13 IST" name="tearDown" finished-at="2025-02-25T19:07:13 IST" duration-ms="260" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testcases.verification_testcase -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
